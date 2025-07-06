@@ -66,6 +66,7 @@ def go(config: DictConfig):
                 )
 
         if "data_check" in active_steps:
+            # Run data size and price checks
             _ = mlflow.run(
                     os.path.join(hydra.utils.get_original_cwd(), "src", "data_check"),
                     "main",
@@ -76,13 +77,20 @@ def go(config: DictConfig):
                         "min_price": config['etl']['min_price'],
                         "max_price": config['etl']['max_price']
                     },
-            )
+                )
 
         if "data_split" in active_steps:
-            ##################
-            # Implement here #
-            ##################
-            pass
+            # Split data into test and train sets
+            _ = mlflow.run(
+                    f"{config['main']['components_repository']}/train_val_test_split",
+                    "main",
+                    parameters = {
+                        "input": "clean_sample.csv:latest",
+                        "test_size": config["modeling"]["test_size"],
+                        "random_seed": config["modeling"]["random_seed"],
+                        "stratify_by": config["modeling"]["stratify_by"]
+                    }
+                )
 
         if "train_random_forest" in active_steps:
 
