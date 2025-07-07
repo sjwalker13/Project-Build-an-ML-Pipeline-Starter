@@ -30,8 +30,11 @@ def go(args):
     # Convert last_review to datetime
     df['last_review'] = pd.to_datetime(df['last_review'])
 
+    # This code was in the forked copy so the new data sample did not fail
+    # Saving a comment in order to create a new release in github
     idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
     df = df[idx].copy()
+    
     # Save the cleaned file
     df.to_csv('clean_sample.csv',index=False)
 
