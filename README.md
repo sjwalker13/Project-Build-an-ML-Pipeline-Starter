@@ -15,6 +15,9 @@ In this project you will build such a pipeline.
   * [The configuration](#the-configuration)
   * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
   * [Pre-existing components](#pre-existing-components)
+- [Links](#links)
+  *  [Weights and Biases Project](#weights-and-biases-project)
+  *  [GitHub Project](#github-project)
 
 ## Preliminary steps
 
@@ -179,3 +182,14 @@ Please, make sure all steps are using **the same** python version and that you h
 ## License
 
 [License](LICENSE.txt)
+
+## Links
+
+### Weights and Biases Project
+
+[Click here to view the Weights & Biases Project](https://wandb.ai/swal706-western-governors-university/nyc_airbnb)
+
+### GitHub Project 
+
+[Click here to view the GitHub Project](https://github.com/sjwalker13/Project-Build-an-ML-Pipeline-Starter)
+
